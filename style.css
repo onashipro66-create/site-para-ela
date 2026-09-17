@@ -1,0 +1,254 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff5f7;
+    color: #3d252b;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CORAÇÃO PRINCIPAL
+========================= */
+
+.coracao {
+    font-size: 55px;
+    text-align: center;
+    margin-top: 35px;
+
+    animation: bater 1s infinite;
+}
+
+
+/* Animação do coração */
+
+@keyframes bater {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    text-align: center;
+    padding: 20px 20px 50px;
+}
+
+.pequeno {
+    font-size: 16px;
+    color: #8c6870;
+}
+
+h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.subtitulo {
+    font-size: 18px;
+    color: #76535b;
+}
+
+
+/* =========================
+   INTRODUÇÃO
+========================= */
+
+.introducao {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    padding: 30px 20px 60px;
+}
+
+.introducao h2,
+.galeria-section h2,
+.mensagem h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   GALERIA
+========================= */
+
+.galeria-section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.galeria {
+    display: grid;
+
+    /* cria várias colunas */
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+
+/* Cada quadrado */
+
+.foto {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    animation: aparecer 0.8s ease;
+}
+
+
+/* Imagem dentro do quadrado */
+
+.foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* Quando passar o mouse */
+
+.foto:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   ANIMAÇÃO DAS FOTOS
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+.mensagem {
+    max-width: 750px;
+    margin: 80px auto;
+    padding: 45px 35px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+
+    text-align: center;
+}
+
+.mensagem p {
+    margin-bottom: 20px;
+}
+
+.coracao-pequeno {
+    font-size: 35px;
+
+    animation: bater 1s infinite;
+}
+
+.final {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.assinatura {
+    margin-top: 35px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color: #8c6870;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+    }
+
+    .galeria {
+        /* no celular ficam 2 fotos por linha */
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .mensagem {
+        margin: 50px 15px;
+        padding: 30px 20px;
+    }
+
+}
